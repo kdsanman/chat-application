@@ -1,5 +1,4 @@
 #Kimberly D. Santiago
-#kds2152
 #UdpChat.py
 
 import socket, sys, os, signal, time
