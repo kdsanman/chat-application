@@ -1,0 +1,72 @@
+
+Test 1:
+$ python UdpChat.py -c x 127.0.0.1 10000 2000 >> test.txt
+>>> reg x
+>>> [Welcome, You are registered.]
+>>> [Client table updated.] -- {'y': ['127.0.0.1', 49699, 'yes']} 
+>>> y :  Hey x, this is y. 
+>>> send y Hey y, this is x.
+>>> [Message received by y ]
+>>> dereg x
+>>> [You are Offline. Bye.]
+>>> reg x
+>>> [Welcome back]
+>>> [You have messages.]
+>>> y: Thu Mar  2 18:45:24 2017  u up? 
+>>> [Client table updated.] -- {'y': ['127.0.0.1', 49699, 'yes']} 
+>>> send y I'm up!
+>>> [Message received by y ]
+>>> [Client table updated.] -- {'y': ['127.0.0.1', 49699, 'no']} 
+>>> send y It say's you're offline
+>>> [No ACK from y , message sent to server.]
+>>>  [Messages received by the server and saved.]
+>>>  [Client table updated.] -- {'y': ['127.0.0.1', 49699, 'no']} 
+>>> [Client table updated.] -- {'y': ['127.0.0.1', 49699, 'yes']} 
+>>> y :  I was yeah sorry 
+>>> dereg x
+>>> [You are Offline. Bye.]
+>>> 
+--- Logging off
+
+Test 2: Various client messages and server messages to handle erroneuos input/commands
+>>> regg y
+>>> [You are not online, please register first. Usage: reg y ]
+>>> reg y
+>>> [Server not responding]
+>>> [Exiting]
+
+>>> reg
+>>> [You are not online, please register first. Usage: reg y ]
+>>> reg y
+>>> [Server not responding]
+>>> [Exiting]
+
+>>> dereg y
+>>> [You are not online, please register first. Usage: reg y ]
+>>> reg y
+>>> [Welcome, You are registered.]
+>>> reg y
+[Please enter an available command: dereg or send.]
+>>> 
+--- Logging off
+
+
+Test 3: client y registers, Crtl+C, then reg backs in (uses same IP and port, but doesn't have to)
+$ python UdpChat.py -c y 127.0.0.1 10000 4000
+>>> reg y
+>>> [Welcome, You are registered.]
+>>> [Client table updated.] -- {'x': ['127.0.0.1', 59603, 'yes']} 
+>>>  x :  Hi! 
+>>> --- Logging off (Ctrl+C scenario)
+
+$ python UdpChat.py -c y 127.0.0.1 10000 4000
+>>> reg y
+>>> [Welcome back]
+>>> [You have messages.]
+>>> x: Thu Mar  2 19:06:19 2017  You there? 
+>>> [Client table updated.] -- {'x': ['127.0.0.1', 59603, 'yes']} 
+>>> x :  Did that work???? 
+>>> dereg y
+>>> [You are Offline. Bye.]
+>>> 
+--- Logging off
