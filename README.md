@@ -8,6 +8,11 @@ Similarly, to bring up the client, use the command line arguments:
 ```
 $ python UdpChat -c <nick-name> 127.0.0.1 <server Port> <client Port>
 ```
+### How it works
+![Registration](registration.png)
+![De-registration](de_reg.png)
+![Offline chat](offline_chat.png)
+
 #### Tests ####
 Some test have been logged in the test.txt file. Includes how the client 
 window would look like. The server prints various messages to help in the
