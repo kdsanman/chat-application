@@ -1,12 +1,14 @@
 #### Compile and run ####
 I used python so compiling and running is extremely easy.
 To bring up the server, use the command line arguments:
+```
 $ python UdpChat -s <port number>
-
+```
 Similarly, to bring up the client, use the command line arguments:
+```
 $ python UdpChat -c <nick-name> 127.0.0.1 <server Port> <client Port>
-
-#############
+```
+#### Tests ####
 Some test have been logged in the test.txt file. Includes how the client 
 window would look like. The server prints various messages to help in the
 debug of the program. Please ignore server output. It is not logged in the
@@ -30,12 +32,10 @@ I handled all cases where my server crashed and when the client crashed as well,
 but of course there may be more bugs I don't know of because of how I tested
 my program.
 
-I couldn't test the [Client exists] scenario, because I just don't know how I
+I couldn't test the "Client exists" scenario, because I just don't know how I
 can test this case. Regardless, the implementation to handle this case is there.
 
-I did not handle the case where two servers are running. I
-believe this was not specified in the assignment, so I don't think I have to
-handle that case. 
+I did not handle the case where two servers are running. 
 
 #### How the server works ####
 The server uses the address 127.0.0.1 and whatever port. The case where an
@@ -61,8 +61,9 @@ After the arguments are validated, the shell prompt comes up. A client that has
 never registered with the server still uses the same command to register. The
 client will not automatically register when using the correct command line args.
 To register or log back in, use the following command:
+```
 >>> reg <nick-name>
-
+```
 If all goes well, the client will one of six things:
 1. A welcome message
 2. A welcome back message
@@ -87,8 +88,10 @@ messaging so I put the timeout to be longer. Also, say you are writing something
 and a client in your table deregisters, the server will send you the table and
 will cut your typing, but nevertheless you can keep writing and all of your 
 input will be handled. So you experience see something like:
->>> dere[Client table updated.] -- {table}
+```
+>>> dere(Client table updated.) -- {table}
 >>> g x
+```
 Deregistration for x will be successful, but that will happen. This is only the
 case where the table updates while client is writing command.
 
