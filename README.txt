@@ -1,5 +1,5 @@
 #### Compile and run ####
-I just python so compiling and running is extremely easy.
+I used python so compiling and running is extremely easy.
 To bring up the server, use the command line arguments:
 $ python UdpChat -s <port number>
 
