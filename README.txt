@@ -1,7 +1,3 @@
-Kimberly D. Santiago - kds2152
-P1
-March 2, 2017
-
 #### Compile and run ####
 I just python so compiling and running is extremely easy.
 To bring up the server, use the command line arguments:
